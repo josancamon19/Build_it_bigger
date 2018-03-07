@@ -7,13 +7,10 @@ import android.util.Pair;
 import android.widget.Toast;
 
 import com.example.displayjoke.DisplayJokeActivity;
-import com.example.supplyjokes.Joke;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.udacity.gradle.builditbigger.backend.jokeApi.model.MyBean;
 import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
+import com.udacity.gradle.builditbigger.backend.jokeApi.model.MyJoke;
 
 import java.io.IOException;
 
@@ -24,20 +21,21 @@ import java.io.IOException;
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static JokeApi myApiService = null;
     private Context context;
-
-
+    public EndpointsAsyncTask(Context context){
+        this.context = context;
+    }
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {  // Only do this once
             JokeApi.Builder builder = new JokeApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("https://android-app-backend.appspot.com/_ah/api/");
+                    .setRootUrl("http://10.0.2.2:8080/_ah/api/");
             // end options for devappserver
 
             myApiService = builder.build();
         }
-        context = params[0].first;
+        //context = params[0].first;
         try {
-            return myApiService.putJoke(new MyBean()).execute().getData();
+            return myApiService.putJoke(new MyJoke()).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
