@@ -3,6 +3,7 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.util.Pair;
 import android.widget.Toast;
 
@@ -13,6 +14,8 @@ import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
 import com.udacity.gradle.builditbigger.backend.jokeApi.model.MyJoke;
 
 import java.io.IOException;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Santiago on 4/03/2018.
@@ -35,6 +38,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         }
         //context = params[0].first;
         try {
+            Log.d(TAG, "onPostExecute:  "+myApiService.putJoke(new MyJoke()).execute().getData());
             return myApiService.putJoke(new MyJoke()).execute().getData();
         } catch (IOException e) {
             return e.getMessage();
@@ -44,6 +48,8 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     @Override
     protected void onPostExecute(String result) {
         Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onPostExecute:  "+result);
+
         Intent intent = new Intent(context, DisplayJokeActivity.class);
         intent.putExtra("joke",result);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
