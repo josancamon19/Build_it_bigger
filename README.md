@@ -28,7 +28,7 @@ Gradle to manage apps of increasing complexity. You'll learn to:
 
 ## Screens
 
-![screen](../master/images/buill-it-bigger.png) ![screen](../master/images/buill-it-bigger-joke.png)
+![screen](../master/images/buill-it-bigger.png) ![screen](../master/images/build-it-bigger-joke.png)
 
 ## How Do I Complete this Project?
 
