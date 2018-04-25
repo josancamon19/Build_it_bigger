@@ -26,6 +26,10 @@ Gradle to manage apps of increasing complexity. You'll learn to:
 * Use the Gradle App Engine plugin to deploy a backend
 * Configure an integration test suite that runs against the local App Engine development server
 
+##Screens
+
+![screen](../master/images/build-it-bigger.png)
+
 ## How Do I Complete this Project?
 
 ### Step 0: Starting Point
@@ -117,33 +121,6 @@ string. For a refresher on setting up Android tests, check out demo 4.09.
 
 Add free and paid product flavors to your app. Remove the ad (and any
 dependencies you can) from the paid flavor.
-
-## Optional Tasks
-
-For extra practice to make your project stand out, complete the following tasks.
-
-### Add Interstitial Ad
-
-Follow these instructions to add an interstitial ad to the free version.
-Display the ad after the user hits the button, but before the joke is shown.
-
-https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
-
-### Add Loading Indicator
-
-Add a loading indicator that is shown while the joke is being retrieved and
-disappears when the joke is ready. The following tutorial is a good place to
-start:
-
-http://www.tutorialspoint.com/android/android_loading_spinner.htm
-
-### Configure Test Task
-
-To tie it all together, create a Gradle task that:
-
-1. Launches the GCE local development server
-2. Runs all tests
-3. Shuts the server down again
 
 # Rubric
 
