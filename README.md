@@ -95,7 +95,6 @@ the Setup Cloud SDK.
 Start or stop your local server by using the gradle tasks as shown in the following
 screenshot:
 ![screen](../master/GCE-server-gradle-tasks.png)
-<img src="/FinalProject/GCE-server-gradle-tasks.png" height="500">
 
 Once your local GCE server is started you should see the following at 
 [localhost:8080](http://localhost:8080)
