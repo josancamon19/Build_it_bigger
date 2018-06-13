@@ -26,6 +26,10 @@ Gradle to manage apps of increasing complexity. You'll learn to:
 * Use the Gradle App Engine plugin to deploy a backend
 * Configure an integration test suite that runs against the local App Engine development server
 
+## Screens
+
+![screen](../master/images/buill-it-bigger.png) ![screen](../master/images/build-it-bigger-joke.png)
+
 ## How Do I Complete this Project?
 
 ### Step 0: Starting Point
@@ -90,8 +94,7 @@ the Setup Cloud SDK.
 
 Start or stop your local server by using the gradle tasks as shown in the following
 screenshot:
-
-<img src="/FinalProject/GCE-server-gradle-tasks.png" height="500">
+![screen](../master/GCE-server-gradle-tasks.png)
 
 Once your local GCE server is started you should see the following at 
 [localhost:8080](http://localhost:8080)
@@ -118,33 +121,6 @@ string. For a refresher on setting up Android tests, check out demo 4.09.
 Add free and paid product flavors to your app. Remove the ad (and any
 dependencies you can) from the paid flavor.
 
-## Optional Tasks
-
-For extra practice to make your project stand out, complete the following tasks.
-
-### Add Interstitial Ad
-
-Follow these instructions to add an interstitial ad to the free version.
-Display the ad after the user hits the button, but before the joke is shown.
-
-https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
-
-### Add Loading Indicator
-
-Add a loading indicator that is shown while the joke is being retrieved and
-disappears when the joke is ready. The following tutorial is a good place to
-start:
-
-http://www.tutorialspoint.com/android/android_loading_spinner.htm
-
-### Configure Test Task
-
-To tie it all together, create a Gradle task that:
-
-1. Launches the GCE local development server
-2. Runs all tests
-3. Shuts the server down again
-
 # Rubric
 
 ### Required Components
@@ -159,10 +135,24 @@ To tie it all together, create a Gradle task that:
 
 * App retrieves jokes from Google Cloud Endpoints module and displays them via an Activity from the Android Library.
 
-### Optional Components
+## Android Developer Nanodegree
+[![udacity][1]][2]
 
-Once you have a functioning project, consider adding more features to test your Gradle and Android skills. Here are a few suggestions:
+[1]: ../master/images/logo.png
+[2]: https://www.udacity.com/course/android-developer-nanodegree--nd801
 
-* Make the free app variant display interstitial ads between the main activity and the joke-displaying activity.
-* Have the app display a loading indicator while the joke is being fetched from the server.
-* Write a Gradle task that starts the GCE dev server, runs all the Android tests, and shuts down the dev server.
+## License
+
+    Copyright 2018 Joan Cabezas
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
