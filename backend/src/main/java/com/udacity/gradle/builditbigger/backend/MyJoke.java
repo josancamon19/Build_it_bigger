@@ -7,13 +7,13 @@ import com.example.supplyjokes.Joke;
  */
 public class MyJoke {
 
-    private Joke myData;
-
-    public MyJoke()  {
-        myData = new Joke();
-    }
+    private String myData;
 
     public String getData() {
-        return myData.getJoke();
+        return myData;
+    }
+
+    public void setData(String data) {
+        myData = data;
     }
 }

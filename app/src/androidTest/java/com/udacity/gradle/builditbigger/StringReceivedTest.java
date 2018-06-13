@@ -1,30 +1,28 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.test.AndroidTestCase;
 import android.util.Log;
+import android.util.Pair;
 
-/**
- * Created by Matteo on 30/06/2015.
- */
+import com.example.supplyjokes.Joke;
+
+import static android.content.ContentValues.TAG;
+
+
 public class StringReceivedTest extends AndroidTestCase {
 
     private static final String LOG_TAG = StringReceivedTest.class.getSimpleName();
 
     @SuppressWarnings("unchecked")
-    public void test() {
+    public void test() throws Exception {
 
-        // Testing that Async task successfully retrieves a non-empty string
-        // You can test this from androidTest -> Run 'All Tests'
-        String result = null;
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext());
+
         endpointsAsyncTask.execute();
-        try {
-            result = endpointsAsyncTask.get();
-            Log.d(LOG_TAG, "Retrieved a non-empty string successfully: " + result);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String result = endpointsAsyncTask.get();
+        Log.d(LOG_TAG, "Retrieved a non-empty string successfully: " + result);
+
         assertNotNull(result);
     }
-
 }
